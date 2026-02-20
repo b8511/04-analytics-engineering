@@ -1,3 +1,7 @@
+with source as (
+    select * from {{ source('raw', 'green_tripdata') }}
+),
+
 renamed as (
     select
         -- identifiers
@@ -28,3 +32,5 @@ renamed as (
     from source
     where vendorid is not null
 )
+
+select * from renamed
