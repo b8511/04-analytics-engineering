@@ -23,7 +23,7 @@ select
     -- Additional metrics for operational analysis
     count(trip_id) as total_monthly_trips,
     avg(passenger_count) as avg_monthly_passenger_count,
-    avg(trip_distance) as avg_monthly_trip_distance
+    avg(trip_distance) as avg_monthly_trip_distance,
 
 from {{ ref('fct_trips') }}
 group by pickup_zone, revenue_month, service_type
